@@ -38,6 +38,7 @@ export const projects = [
     date: "Feb 2026",
     type: "Personal Project",
     status: "deployed",
+    url: "https://smart-task-manager-one-lake.vercel.app/login",
     description:
       "A production-ready full-stack task manager with real-time collaboration, AI-assisted task prioritization, and automated background jobs.",
     points: [
@@ -52,6 +53,7 @@ export const projects = [
     date: "Aug 2025",
     type: "Personal Project",
     status: "shipped",
+    url: "https://www.exactbidestimates.com/",
     description:
       "A full-stack construction estimation platform for managing client inquiries and quotes.",
     points: [
@@ -65,6 +67,7 @@ export const projects = [
     date: "Dec 2023 — Jul 2024",
     type: "Portfolio for Educational Institute",
     status: "shipped",
+    url: "https://instituteofielts.vercel.app/",
     description:
       "A versatile web app streamlining digital tasks for an educational institute — signatures, audio, and PDFs.",
     points: [
