@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0b1220;
+  --color-ink-raised: #111a2e;
+  --color-paper: #edeae0;
+  --color-paper-dim: #b9b6ac;
+  --color-amber: #e8a33d;
+  --color-teal: #3fa796;
+  --color-slate: #7c8798;
+  --color-line: #24304a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-amber);
+  color: var(--color-ink);
+}
+
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(237,234,224,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237,234,224,0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.status-dot {
+  box-shadow: 0 0 0 3px rgba(63, 167, 150, 0.15);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.blink {
+  animation: blink 2s ease-in-out infinite;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+}
