@@ -53,12 +53,12 @@ function Hero() {
           {profile.bio}
         </p>
         <div className="mt-8 flex flex-wrap gap-3 font-mono text-sm">
-          {/* <a
+          <a
             href={`mailto:${profile.email}`}
             className="focus-ring rounded-md bg-amber px-5 py-2.5 font-medium text-ink transition-transform hover:-translate-y-0.5"
           >
             Get in touch
-          </a> */}
+          </a>
           <a
             href={profile.linkedinUrl}
             target="_blank"
@@ -137,7 +137,20 @@ function ProjectCard({ project }) {
     <div className="group rounded-lg border border-line bg-ink-raised p-6 transition-colors hover:border-teal">
       <div className="mb-3 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-lg font-semibold text-paper">{project.name}</h3>
+          <h3 className="text-lg font-semibold text-paper">
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring rounded-sm underline decoration-line decoration-1 underline-offset-4 transition-colors hover:text-amber hover:decoration-amber"
+              >
+                {project.name}
+              </a>
+            ) : (
+              project.name
+            )}
+          </h3>
           <p className="font-mono text-xs uppercase tracking-widest text-slate">{project.type}</p>
         </div>
         <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-line px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-teal">
@@ -163,7 +176,19 @@ function ProjectCard({ project }) {
           </span>
         ))}
       </div>
-      <div className="mt-4 font-mono text-[11px] text-slate">{project.date}</div>
+      <div className="mt-4 flex items-center justify-between font-mono text-[11px] text-slate">
+        <span>{project.date}</span>
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+            className="focus-ring rounded-sm text-teal transition-colors hover:text-amber"
+          >
+            visit ↗
+          </a>
+        )}
+      </div>
     </div>
   );
 }
